@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 
 const Navbar = ({ activeSection }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
 
   const navLinks = [
     { name: t.nav.home, href: '#hero', id: 'hero' },
@@ -41,9 +43,30 @@ const Navbar = ({ activeSection }) => {
           ))}
         </nav>
 
-        {/* Controls: Language Toggle & Mobile Menu */}
-        <div className="flex items-center gap-3">
+        {/* Controls: Theme & Language Toggle & Mobile Menu */}
+        <div className="flex items-center gap-2.5">
           
+          {/* Theme Toggle Button */}
+          <button
+            onClick={toggleTheme}
+            type="button"
+            title={theme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
+            aria-label="Toggle theme"
+            className="p-1.5 px-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-slate-700 transition-all flex items-center gap-1.5 text-xs font-mono select-none"
+          >
+            {theme === 'dark' ? (
+              <>
+                <span className="text-amber-400 text-xs">☀️</span>
+                <span className="text-[11px] font-sans font-medium">Light</span>
+              </>
+            ) : (
+              <>
+                <span className="text-cyan-400 text-xs">🌙</span>
+                <span className="text-[11px] font-sans font-medium">Dark</span>
+              </>
+            )}
+          </button>
+
           {/* Language Switcher */}
           <div className="flex items-center rounded-lg bg-slate-900 border border-slate-800 p-0.5 font-mono text-xs">
             <button

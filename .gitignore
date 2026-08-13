@@ -10,12 +10,13 @@ build/
 # Vercel Deployment (Vercel 설정/캐시 제외)
 .vercel/
 
-# Environment Variables (환경변수/보안 비밀키 제외)
+# Environment Variables & Helper Utilities (환경변수/보안 비밀키 제외)
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+generateSecret.cjs
 
 # Logs (로그 파일 제외)
 *.log

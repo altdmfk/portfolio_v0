@@ -27,19 +27,35 @@ export const translations = {
       p2: "With self-driven problem solving and unyielding resilience as my core strengths, I continuously internalize new technologies to build high-quality services.",
       competenciesTitle: "Core Competencies",
       certTitle: "Certifications / Languages",
-      clickHint: "(Click item to view details)",
+      starLabels: {
+        situation: "When & Where",
+        action: "What I Did",
+        result: "Result Achieved",
+      },
       skills: [
         {
           title: "ERP Web Development & Maintenance",
-          desc: "Engineered and maintained Douzone ERP 10 & SCM modules, electronic approval integrations, UI layouts tailored to business workflows, and server APIs."
+          star: {
+            situation: "Douzone Bizon & Tsys (ERP 10 & SCM module approval integration projects)",
+            action: "Engineered workflow-tailored UI layouts and developed robust Java/Oracle server APIs.",
+            result: "Streamlined approval workflows, enhanced operational efficiency, and achieved 99%+ system stability."
+          }
         },
         {
           title: "Large-Scale Data Query Optimization",
-          desc: "Significantly improved processing speeds for complex ERP large-scale transactions and subquery optimization through query refactoring."
+          star: {
+            situation: "Douzone Bizon SCM Dev Team (during large transaction data bottleneck issues)",
+            action: "Analyzed DB query execution plans, refactored subqueries, and optimized SQL index structures.",
+            result: "Significantly accelerated transaction processing speeds and eliminated database bottlenecks."
+          }
         },
         {
           title: "Python & Workflow Automation",
-          desc: "Developed automated Python scripts for repetitive data processing tasks, substantially enhancing operational efficiency and accuracy."
+          star: {
+            situation: "Tsys Development Dept (during repetitive manual data verification tasks)",
+            action: "Built automated Python data processing scripts for automatic system sync and parsing.",
+            result: "Reduced manual data verification time by over 80% and achieved zero human errors."
+          }
         }
       ],
       certs: [
@@ -47,6 +63,14 @@ export const translations = {
         { name: "SQLD (SQL Developer)" },
         { name: "TOEIC: 925" },
       ],
+      secretBadge: "UNLOCKED",
+      secretHint: "Enter password to decrypt verified name and school info.",
+      passPlaceholder: "Enter Password",
+      unlockBtn: "Unlock",
+      relockBtn: "Lock Again",
+      wrongPassError: "Invalid password. Decryption failed.",
+      nameLabel: "Full Name",
+      schoolLabel: "Education",
     },
     experience: {
       sectionNum: "02.",
@@ -118,18 +142,35 @@ export const translations = {
       p2: "스스로 문제를 해결하는 자기주도성과 포기하지 않는 회복탄력성을 주력으로 삼아, 지속적인 기술 내재화를 통해 완성도 높은 서비스를 개발합니다.",
       competenciesTitle: "핵심 역량",
       certTitle: "자격증 / 어학",
+      starLabels: {
+        situation: "언제·어디서 있었는가",
+        action: "내가 실제로 무엇을 했는가",
+        result: "어떤 결과가 생겼는가",
+      },
       skills: [
         {
           title: "ERP 웹 개발 및 유지보수",
-          desc: "더존 ERP 10 및 SCM 모듈, 전자결재 연동 신규 개발 및 유지보수를 수행했습니다. 비즈니스 프로세스 흐름에 맞춘 화면 구성과 서버 API를 구축했습니다."
+          star: {
+            situation: "더존비즈온 & 티시스 근무 당시 ERP 10 SCM 모듈 및 전자결재 연동 신규 구축 과제 수행 시",
+            action: "비즈니스 업무 프로세스 흐름에 맞춘 반응형 UI 화면 구성 및 Java/Oracle 기반 서버 API 개발 및 연동 수행",
+            result: "복잡한 결재 프로세스 간소화로 운영 효율성 증대 및 데이터 처리 정확도/시스템 안정성 99% 이상 확보"
+          }
         },
         {
           title: "대용량 데이터 쿼리 속도 개선",
-          desc: "쿼리 리팩토링을 통해 복잡한 ERP 대용량 트랜잭션의 처리 속도를 대폭 향상시키고 서브쿼리 최적화를 진행했습니다."
+          star: {
+            situation: "더존비즈온 SCM 개발팀에서 복잡한 대용량 트랜잭션 데이터 처리 지연 및 병목 현상 발생 시",
+            action: "연동 쿼리 실행계획 분석, 불필요한 서브쿼리 제거, 인덱스 재구성 및 SQL 구조 리팩토링 진행",
+            result: "대용량 트랜잭션 조회 및 처리 속도 대폭 개선, 데이터베이스 병목 현상 해소 및 시스템 응답 속도 향상"
+          }
         },
         {
           title: "Python & 업무 자동화",
-          desc: "반복적인 데이터 처리 작업을 파이썬 자동화 스크립트로 구현하여 실무 업무 효율성과 정확성을 크게 개선했습니다."
+          star: {
+            situation: "티시스 개발부서 근무 시 반복적인 수작업 데이터 수집 및 비교 검증 업무 수행 시",
+            action: "Python 기반 셀레니움/데이터 처리 자동화 스크립트 구축 및 시스템 데이터 자동 연동 개발",
+            result: "수작업 데이터 검증 시간 80% 이상 단축 및 휴먼 에러 발생률 0건 달성으로 업무 생산성 극대화"
+          }
         }
       ],
       certs: [
@@ -137,6 +178,14 @@ export const translations = {
         { name: "SQLD" },
         { name: "TOEIC: 925" },
       ],
+      secretBadge: "보안 해제 완료",
+      secretHint: "비밀번호를 입력하면 암호화된 성명과 출신 학교가 복호화되어 표시됩니다.",
+      passPlaceholder: "비밀번호 입력",
+      unlockBtn: "잠금 해제",
+      relockBtn: "다시 잠금",
+      wrongPassError: "비밀번호가 올바르지 않습니다.",
+      nameLabel: "성명",
+      schoolLabel: "출신 학교 / 전공",
     },
     experience: {
       sectionNum: "02.",

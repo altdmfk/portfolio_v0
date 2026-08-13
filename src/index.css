@@ -21,4 +21,145 @@
 
 html {
   color-scheme: dark;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode Overrides */
+html.light-mode {
+  color-scheme: light;
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html.light-mode body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Backgrounds in Light Mode */
+html.light-mode .bg-\[\#070a12\] {
+  background-color: #f8fafc !important;
+}
+
+html.light-mode .bg-\[\#090e1a\]\/40 {
+  background-color: #f1f5f9 !important;
+}
+
+html.light-mode .bg-\[\#05070e\] {
+  background-color: #e2e8f0 !important;
+}
+
+html.light-mode .bg-slate-900\/90,
+html.light-mode .bg-slate-900\/80,
+html.light-mode .bg-slate-900\/60,
+html.light-mode .bg-slate-900\/50,
+html.light-mode .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+html.light-mode .bg-slate-950\/80,
+html.light-mode .bg-slate-950\/70,
+html.light-mode .bg-slate-950\/60,
+html.light-mode .bg-slate-950 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Header in Light Mode */
+html.light-mode header {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+/* Typography in Light Mode */
+html.light-mode h1,
+html.light-mode h2,
+html.light-mode h3 {
+  color: #020617 !important;
+}
+
+html.light-mode h1 span {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #020617 !important;
+  color: #020617 !important;
+}
+
+html.light-mode .text-white {
+  color: #020617 !important;
+}
+
+html.light-mode .text-slate-100 {
+  color: #0f172a !important;
+}
+
+html.light-mode .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html.light-mode .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light-mode .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light-mode .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Badges, Tech Stack Tags & Period Pills in Light Mode */
+html.light-mode .bg-cyan-950\/50,
+html.light-mode .bg-cyan-950\/40,
+html.light-mode .bg-cyan-950 {
+  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+  border-color: #bae6fd !important;
+}
+
+html.light-mode .bg-slate-800\/80,
+html.light-mode .bg-slate-800\/50,
+html.light-mode .bg-slate-800 {
+  background-color: #f1f5f9 !important;
+  color: #0284c7 !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light-mode .text-cyan-300 {
+  color: #0284c7 !important;
+}
+
+html.light-mode .text-cyan-400 {
+  color: #0369a1 !important;
+}
+
+/* Timeline & Dot styling in Light Mode */
+html.light-mode .before\:bg-slate-800::before {
+  background-color: #cbd5e1 !important;
+}
+
+html.light-mode .bg-slate-900.border-cyan-400 {
+  background-color: #ffffff !important;
+  border-color: #0284c7 !important;
+}
+
+/* Borders in Light Mode */
+html.light-mode .border-slate-800,
+html.light-mode .border-slate-800\/90,
+html.light-mode .border-slate-800\/80,
+html.light-mode .border-slate-800\/60,
+html.light-mode .border-slate-700\/80,
+html.light-mode .border-slate-700\/50 {
+  border-color: #cbd5e1 !important;
+}
+
+/* Grid Pattern in Light Mode */
+html.light-mode .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px) !important;
 }

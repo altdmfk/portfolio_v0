@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -44,7 +45,7 @@ function PortfolioContent() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#070a12] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-300">
+    <div className="min-h-screen bg-[#070a12] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-300 transition-colors duration-300">
       <Navbar activeSection={activeSection} />
       <main>
         <Hero onSelectSkill={handleSelectSkill} />
@@ -59,8 +60,10 @@ function PortfolioContent() {
 
 export default function App() {
   return (
-    <LanguageProvider>
-      <PortfolioContent />
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <PortfolioContent />
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
