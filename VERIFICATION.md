@@ -6,7 +6,7 @@
 
 2. 무엇을 하나요 (3단계 이내 실행 방법)
 
-  1. https://network-security-portfolio-3h2ykkfdw-a-55e6.vercel.app/ 로 접속합니다.
+  1. [https://network-security-portfolio-3h2ykkfdw-a-55e6.vercel.app/](https://network-security-portfolio.vercel.app/) 로 접속합니다.
   2. `About Me (자기소개)` 섹션 오른쪽의 `🔒` 카드에서 비밀번호 `fortytwo`를 입력하고 [잠금 해제] 버튼을 누릅니다.
   3. 상단 네비게이션의 `☀️ Light` / `🌙 Dark` 버튼과 `EN` / `KO` 버튼을 클릭하여 반응형 화면, 다국어 및 테마 전환 동작을 검증합니다.
 
