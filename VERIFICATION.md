@@ -2,7 +2,7 @@
 
 1. 어디로 가나요
 
-- 공개 웹페이지: https://network-security-portfolio-3h2ykkfdw-a-55e6.vercel.app/
+- 공개 웹페이지: https://network-security-portfolio.vercel.app/
 
 2. 무엇을 하나요 (3단계 이내 실행 방법)
 
