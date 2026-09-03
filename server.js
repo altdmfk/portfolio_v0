@@ -284,8 +284,9 @@ const requireAuth = async (req, res, next) => {
 };
 
 // --- Routes ---
+const router = express.Router();
 
-app.get('/api/auth/status', async (req, res) => {
+router.get('/auth/status', async (req, res) => {
   try {
     const token = req.cookies?.sessionId;
     if (token) {
@@ -301,7 +302,7 @@ app.get('/api/auth/status', async (req, res) => {
   }
 });
 
-app.post('/api/auth/register/generate-options', async (req, res) => {
+router.post('/auth/register/generate-options', async (req, res) => {
   try {
     const { username } = req.body;
     if (!username) {
@@ -334,7 +335,7 @@ app.post('/api/auth/register/generate-options', async (req, res) => {
   }
 });
 
-app.post('/api/auth/register/verify', async (req, res) => {
+router.post('/auth/register/verify', async (req, res) => {
   try {
     const { username, name, response } = req.body;
     if (!username || !response) {
@@ -402,7 +403,7 @@ app.post('/api/auth/register/verify', async (req, res) => {
   }
 });
 
-app.post('/api/auth/login/generate-options', async (req, res) => {
+router.post('/auth/login/generate-options', async (req, res) => {
   try {
     const { username } = req.body;
     if (!username) {
@@ -441,7 +442,7 @@ app.post('/api/auth/login/generate-options', async (req, res) => {
   }
 });
 
-app.post('/api/auth/login/verify', async (req, res) => {
+router.post('/auth/login/verify', async (req, res) => {
   try {
     const { username, response } = req.body;
     
@@ -509,7 +510,7 @@ app.post('/api/auth/login/verify', async (req, res) => {
   }
 });
 
-app.post('/api/auth/logout', async (req, res) => {
+router.post('/auth/logout', async (req, res) => {
   const token = req.cookies?.sessionId;
   if (token) {
     delete activeSessionKeys[token];
@@ -524,7 +525,7 @@ app.post('/api/auth/logout', async (req, res) => {
   res.json({ success: true });
 });
 
-app.get('/api/auth/passkeys', requireAuth, async (req, res) => {
+router.get('/auth/passkeys', requireAuth, async (req, res) => {
   const currentKeyId = req.cookies?.currentKeyId || activeSessionKeys[req.cookies?.sessionId];
   const userPasskeys = await dbGetUserPasskeys(req.user.id);
   res.json(userPasskeys.map(pk => ({
@@ -535,7 +536,7 @@ app.get('/api/auth/passkeys', requireAuth, async (req, res) => {
   })));
 });
 
-app.delete('/api/auth/passkeys/:id', requireAuth, async (req, res) => {
+router.delete('/auth/passkeys/:id', requireAuth, async (req, res) => {
   const { id } = req.params;
   const currentKeyId = req.cookies?.currentKeyId || activeSessionKeys[req.cookies?.sessionId];
 
@@ -563,7 +564,7 @@ app.delete('/api/auth/passkeys/:id', requireAuth, async (req, res) => {
 });
 
 // Protected Confidential Data Route (with BOLA/IDOR Protection)
-app.get('/api/vault/data', requireAuth, async (req, res) => {
+router.get('/vault/data', requireAuth, async (req, res) => {
   const requestedUser = req.query.userId || req.query.username || req.user.username;
 
   // BOLA / IDOR Verification
@@ -581,12 +582,20 @@ app.get('/api/vault/data', requireAuth, async (req, res) => {
   res.json({ items });
 });
 
+// Mount router at both '/api' (for local Vite proxy and full paths) and '/' (for stripped serverless paths)
+app.use('/api', router);
+app.use('/', router);
+
 app.use((err, req, res, next) => {
   console.error('[Server Unhandled Error]:', err);
   res.status(500).json({ error: err.message || 'Internal Server Error' });
 });
 
-const PORT = 3000;
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`[WebAuthn Server] Running on http://127.0.0.1:${PORT}`);
-});
+const PORT = process.env.PORT || 3000;
+if (!process.env.VERCEL) {
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`[WebAuthn Server] Running on http://127.0.0.1:${PORT}`);
+  });
+}
+
+export default app;
