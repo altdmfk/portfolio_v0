@@ -11,6 +11,7 @@ const Navbar = ({ activeSection }) => {
     { name: t.nav.home, href: '#hero', id: 'hero' },
     { name: t.nav.about, href: '#about', id: 'about' },
     { name: t.nav.experience, href: '#experience', id: 'experience' },
+    { name: t.nav.vault, href: '#vault', id: 'vault' },
     { name: t.nav.contact, href: '#contact', id: 'contact' },
   ];
 

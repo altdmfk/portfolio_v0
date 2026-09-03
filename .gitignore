@@ -42,3 +42,6 @@ ehthumbs.db
 Desktop.ini
 
 .vercel
+
+# Temporary files (임시 변환 파일)
+docs/*.html

@@ -7,6 +7,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Vault from './components/Vault';
 
 function PortfolioContent() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -24,7 +25,7 @@ function PortfolioContent() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'experience', 'contact'];
+      const sections = ['hero', 'about', 'experience', 'vault', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -51,6 +52,7 @@ function PortfolioContent() {
         <Hero onSelectSkill={handleSelectSkill} />
         <About activeSkillIdx={activeSkillIdx} setActiveSkillIdx={setActiveSkillIdx} />
         <Experience />
+        <Vault />
         <Contact />
       </main>
       <Footer />
